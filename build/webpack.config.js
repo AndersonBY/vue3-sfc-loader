@@ -94,9 +94,6 @@ const configure = ({name, vueTarget, libraryTargetModule}) => async (env = {}, {
 
 	let vueVersion; // expected vue version
 	switch ( vueTarget ) {
-		case '2':
-			vueVersion = require('vue-template-compiler/package.json').version;
-			break;
 		case '3':
 			vueVersion = require('@vue/compiler-sfc/package.json').version;
 			break;
@@ -292,9 +289,9 @@ const configure = ({name, vueTarget, libraryTargetModule}) => async (env = {}, {
 ${ pkg.name } v${ pkg.version } for vue${ vueTarget }
 
 @description Vue${ vueTarget } ${ pkg.description }.
-@author      ${ pkg.author.name } <${ pkg.author.email }>
+@author      ${ pkg.author.name } <${ pkg.author.url }>
 @license     ${ pkg.license }
-@sources     https://github.com/FranckFreiburger/vue3-sfc-loader
+@sources     https://github.com/AndersonBY/vue3-sfc-loader
 		`.trim()),
 		],
 		resolve: {
@@ -489,8 +486,6 @@ ${ pkg.name } v${ pkg.version } for vue${ vueTarget }
 }
 
 let configs = [
-	{name: 'vue2', vueTarget: '2', libraryTargetModule: false },
-	{name: 'vue2esm', vueTarget: '2', libraryTargetModule: true },
 	{name: 'vue3', vueTarget: '3', libraryTargetModule: false },
 	{name: 'vue3esm', vueTarget: '3', libraryTargetModule: true },
 ]

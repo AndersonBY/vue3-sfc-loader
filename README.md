@@ -2,13 +2,12 @@
 
 ###### [API](docs/api/README.md#loadmodule) | [FAQ](docs/faq.md) | [Examples](docs/examples.md) | [dist](#dist) | [Roadmap](../../issues/1)
 
-Vue3/Vue2 Single File Component loader.  
-Load .vue files dynamically at runtime from your html/js. No node.js environment, no (webpack) build step needed.  
+Vue3 Single File Component loader.
+Load .vue files dynamically at runtime from your html/js. No node.js environment, no (webpack) build step needed.
 
 
 ## Key Features
 
- * Supports Vue 3 and Vue 2 (see [dist/](#dist))
  * Only requires Vue runtime-only build
  * **esm** and **umd** bundles available ([example](docs/examples.md#using-esm-version))
  * Embedded ES6 modules support ( including `import()` )
@@ -84,40 +83,24 @@ Load .vue files dynamically at runtime from your html/js. No node.js environment
 
 ## dist/
 
-  [![latest bundle version](https://img.shields.io/npm/v/vue3-sfc-loader?label=latest%20version)](https://github.com/FranckFreiburger/vue3-sfc-loader/blob/main/CHANGELOG.md)
+  [![latest bundle version](https://img.shields.io/npm/v/vue3-sfc-loader?label=latest%20version)](https://github.com/AndersonBY/vue3-sfc-loader/blob/main/CHANGELOG.md)
   [<!--update-min-br-size-->![bundle minified+brotli size](https://img.shields.io/badge/min%2Bbr-385kB-blue)<!--/update-min-br-size-->](#dist)
   [<!--update-min-gz-size-->![bundle minified+gzip size](https://img.shields.io/badge/min%2Bgz-488kB-blue)<!--/update-min-gz-size-->](#dist)
   [<!--update-min-size-->![bundle minified size](https://img.shields.io/badge/min-1794kB-blue)<!--/update-min-size-->](#dist)
-  
-  [![browser support](https://img.shields.io/github/package-json/browserslist/FranckFreiburger/vue3-sfc-loader)](https://github.com/browserslist/browserslist#query-composition)
+
+  [![browser support](https://img.shields.io/github/package-json/browserslist/AndersonBY/vue3-sfc-loader)](https://github.com/browserslist/browserslist#query-composition)
 
   [![](https://data.jsdelivr.com/v1/package/npm/vue3-sfc-loader/badge)](https://www.jsdelivr.com/package/npm/vue3-sfc-loader)
 
-<!--  
-  [![Vue3 compiler-sfc dependency version](https://img.shields.io/github/package-json/dependency-version/FranckFreiburger/vue3-sfc-loader/dev/@vue/compiler-sfc?label=embeds%20Vue3%20%40vue%2Fcompiler-sfc)](https://github.com/vuejs/vue-next/tree/master/packages/compiler-sfc)
-  [![Vue2 vue-template-compiler dependency version](https://img.shields.io/github/package-json/dependency-version/FranckFreiburger/vue3-sfc-loader/dev/vue-template-compiler?label=embeds%20Vue2%20vue-template-compiler)](https://github.com/vuejs/vue-next/tree/master/packages/compiler-sfc)
--->
   <br>
 
+  ![Vue3](https://img.shields.io/github/package-json/dependency-version/AndersonBY/vue3-sfc-loader/dev/@vue/compiler-sfc?label=For%20Vue%203)
+  - `npm install @makerbi/vue3-sfc-loader`
+  - [jsDelivr](https://www.jsdelivr.com/package/npm/@makerbi/vue3-sfc-loader?path=dist) CDN: https://cdn.jsdelivr.net/npm/@makerbi/vue3-sfc-loader/dist/vue3-sfc-loader.js
+  - [UNPKG](https://unpkg.com/browse/@makerbi/vue3-sfc-loader/dist/) CDN: https://unpkg.com/@makerbi/vue3-sfc-loader
 
-  ![Vue3](https://img.shields.io/github/package-json/dependency-version/FranckFreiburger/vue3-sfc-loader/dev/@vue/compiler-sfc?label=For%20Vue%203)
-  - `npm install vue3-sfc-loader`
-  - [jsDelivr](https://www.jsdelivr.com/package/npm/vue3-sfc-loader?path=dist) CDN: https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js
-  - [UNPKG](https://unpkg.com/browse/vue3-sfc-loader/dist/) CDN: https://unpkg.com/vue3-sfc-loader
-
-  **esm version**: `dist/vue3-sfc-loader.esm.js`  
-  **umd version**: `dist/vue3-sfc-loader.js`  
-  
-  <br>
-
-  ![Vue2](https://img.shields.io/github/package-json/dependency-version/FranckFreiburger/vue3-sfc-loader/dev/vue-template-compiler?label=For%20Vue%202)
-  - `npm install vue3-sfc-loader` (use 'vue3-sfc-loader/dist/vue2-sfc-loader.js')
-  - [jsDelivr](https://www.jsdelivr.com/package/npm/vue3-sfc-loader?path=dist) CDN: https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue2-sfc-loader.js
-  - [UNPKG](https://unpkg.com/browse/vue3-sfc-loader/dist/) CDN: https://unpkg.com/vue3-sfc-loader/dist/vue2-sfc-loader.js
-  
-  **esm version**: `dist/vue2-sfc-loader.esm.js`  
-  **umd version**: `dist/vue2-sfc-loader.js`  
-
+  **esm version**: `dist/vue3-sfc-loader.esm.js`
+  **umd version**: `dist/vue3-sfc-loader.js`
 
 
 ## Build your own version
@@ -125,13 +108,13 @@ Load .vue files dynamically at runtime from your html/js. No node.js environment
   Example: enable IE11 support  
   `npx webpack --config ./build/webpack.config.js --mode=production --env targetsBrowsers="> 1%, last 8 versions, Firefox ESR, not dead, IE 11"` [check](https://browsersl.ist/#q=%3E+1%25%2C+last+8+versions%2C+Firefox+ESR%2C+not+dead%2C+IE+11)
 
-  _see [`package.json`](https://github.com/FranckFreiburger/vue3-sfc-loader/blob/main/package.json) "build" script_  
+  _see [`package.json`](https://github.com/AndersonBY/vue3-sfc-loader/blob/main/package.json) "build" script_  
   _see [browserslist queries](https://github.com/browserslist/browserslist#queries)_  
 
-  **preliminary steps:**  
+  **preliminary steps:**
   1. clone `vue3-sfc-loader`
-  1. (install yarn: `npm install --global yarn`)
-  1. run `yarn install`
+  1. (install pnpm: `npm install --global pnpm`)
+  1. run `pnpm install`
 
 ## How It Works
 
@@ -151,12 +134,12 @@ Load .vue files dynamically at runtime from your html/js. No node.js environment
 ## Any Questions
 
   <!--  ask here: https://stackoverflow.com/questions/ask?tags=vue3-sfc-loader (see [previous questions](https://stackoverflow.com/questions/tagged/vue3-sfc-loader)) -->
-  [:speech_balloon: ask in Discussions tab](https://github.com/FranckFreiburger/vue3-sfc-loader/discussions?discussions_q=category%3AQ%26A)
+  [:speech_balloon: ask in Discussions tab](https://github.com/AndersonBY/vue3-sfc-loader/discussions?discussions_q=category%3AQ%26A)
 
 
 #
 
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Load%20.vue%20files%20dynamically%20from%20your%20html%2Fjs%20without%20any%20build%20step%20!&url=https://github.com/FranckFreiburger/vue3-sfc-loader&via=F_Freiburger&hashtags=vue,vue3,developers)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Load%20.vue%20files%20dynamically%20from%20your%20html%2Fjs%20without%20any%20build%20step%20!&url=https://github.com/AndersonBY/vue3-sfc-loader&via=F_Freiburger&hashtags=vue,vue3,developers)
 
 
 

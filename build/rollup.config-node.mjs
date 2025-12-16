@@ -7,7 +7,7 @@ import terser from '@rollup/plugin-terser'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
-import pkg from '../package.json' assert { type: 'json' };
+import pkg from '../package.json' with { type: 'json' };
 
 
 const genSourcemap = false;
@@ -16,11 +16,8 @@ async function configFactory({ name, vueTarget, libraryTargetModule }) {
 
     let vueVersion; // expected vue version
     switch ( vueTarget ) {
-        case '2':
-            vueVersion = (await import('vue-template-compiler/package.json', { assert: { type: 'json' } })).default.version;
-            break;
         case '3':
-            vueVersion = (await import('@vue/compiler-sfc/package.json', { assert: { type: 'json' } })).default.version;
+            vueVersion = (await import('@vue/compiler-sfc/package.json', { with: { type: 'json' } })).default.version;
             break;
         default:
             throw new Error(`invalid vueTarget: ${ vueTarget }`)
@@ -71,8 +68,6 @@ async function configFactory({ name, vueTarget, libraryTargetModule }) {
 
 
 export default [
-	await configFactory({name: 'vue2', vueTarget: '2', libraryTargetModule: false }),
-	await configFactory({name: 'vue2esm', vueTarget: '2', libraryTargetModule: true }),
 	await configFactory({name: 'vue3', vueTarget: '3', libraryTargetModule: false }),
 	await configFactory({name: 'vue3esm', vueTarget: '3', libraryTargetModule: true }),
 ];
