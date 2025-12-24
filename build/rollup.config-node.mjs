@@ -6,6 +6,7 @@ import replace from '@rollup/plugin-replace';
 import terser from '@rollup/plugin-terser'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
+const lruCacheShim = fileURLToPath(new URL('./lru-cache-shim.mjs', import.meta.url))
 
 import pkg from '../package.json' with { type: 'json' };
 
@@ -44,6 +45,7 @@ async function configFactory({ name, vueTarget, libraryTargetModule }) {
             alias({
                 entries: [
                     { find: './createSFCModule', replacement: `./createVue${ vueTarget }SFCModule` },
+                    { find: 'lru-cache', replacement: lruCacheShim },
                 ]
             }),
             typescript({

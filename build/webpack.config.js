@@ -310,7 +310,7 @@ ${ pkg.name } v${ pkg.version } for vue${ vueTarget }
 				//'es-abstract': require.resolve('es-abstract'),
 
 				'semver$': require.resolve('semver'),
-				'lru-cache$': require.resolve('lru-cache'),
+				'lru-cache$': Path.resolve(__dirname, 'lru-cache-shim.mjs'),
 
 				'@babel/parser$': require.resolve('@babel/parser'),
 				'@babel/template$': require.resolve('@babel/template'),

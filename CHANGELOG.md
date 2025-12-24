@@ -1,4 +1,11 @@
 
+### [0.9.7](https://github.com/FranckFreiburger/vue3-sfc-loader/compare/v0.9.6...v0.9.7) (2025-12-25)
+
+
+### Bug Fixes
+
+* **build:** ensure lru-cache default export compatibility for bundled builds
+
 ### [0.9.5](https://github.com/FranckFreiburger/vue3-sfc-loader/compare/v0.9.4...v0.9.5) (2024-02-06)
 
 
