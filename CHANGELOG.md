@@ -1,4 +1,12 @@
 
+### [0.9.8](https://github.com/FranckFreiburger/vue3-sfc-loader/compare/v0.9.7...v0.9.8) (2025-12-25)
+
+
+### Bug Fixes
+
+* **build:** export lru-cache constructor for CJS consumers
+* **tests:** avoid deprecated puppeteer waitForTimeout API
+
 ### [0.9.7](https://github.com/FranckFreiburger/vue3-sfc-loader/compare/v0.9.6...v0.9.7) (2025-12-25)
 
 

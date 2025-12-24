@@ -84,7 +84,7 @@ async function createPage({ files, processors= {}}) {
 
 		// Emitted when an uncaught exception happens within the page.
 
-		const entry = { type: 'pageerror', text: error.message, content: error };
+		const entry = { type: 'pageerror', text: error.toString(), content: error };
 		console.log(expect.getState().currentTestName, entry);
 		output.push(entry);
 	} );
@@ -100,7 +100,7 @@ async function createPage({ files, processors= {}}) {
 	await page.goto(new URL('/index.html', local));
 
 	await Promise.race([
-		page.waitForTimeout(350),
+		page.waitForTimeout ? page.waitForTimeout(350) : new Promise(resolve => setTimeout(resolve, 350)),
 		//page.waitForSelector('#done'),
 		//new Promise(resolve => page.exposeFunction('_done', resolve)),
 	]);
